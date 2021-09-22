@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Route::get('/', function () {
-//     $date=[];//هذا الطريقه الثانيه افضل من الطريقه الاواله 
+//     $date=[];//هذا الطريقه الثانيه افضل من الطريقه الاواله
 //     $data['id']=5;
 //     $data['name'] = 'Bashar';
 //     return view('welcome', $data);//-> with(['string' => 'Bashar' , 'age' => 27]);//هذا الطريقه الاوله بس طريقه الثانيه افضل
@@ -52,7 +52,7 @@ use Illuminate\Support\Facades\Route;
 // });*/
 
 
-// Route::group(['prefix' => 'users'],function(){// من نفسه هذا حق الملفات users اعمل هذا يكتلك  users/showهذا بدل ما تعمل 
+// Route::group(['prefix' => 'users'],function(){// من نفسه هذا حق الملفات users اعمل هذا يكتلك  users/showهذا بدل ما تعمل
 
 //     Route::get('/',function(){
 //         return 'work';
@@ -66,7 +66,7 @@ use Illuminate\Support\Facades\Route;
 
 
 
-// Route::group(['namespace' => 'Admin'], function(){//   من نفسه هذا حق المجلدات Admin اعمل هذا يكتلك  Admin/showهذا بدل ما تعمل 
+// Route::group(['namespace' => 'Admin'], function(){//   من نفسه هذا حق المجلدات Admin اعمل هذا يكتلك  Admin/showهذا بدل ما تعمل
 
 //     Route::get('second1','SecondController@showString1')->middleware('auth');//Login اول ما احاول ادخل الموقع عبر اللينك يحولي الي صفحه middleware
 //     Route::get('second2','SecondController@showString2');
@@ -88,7 +88,7 @@ Route::get('/home', 'HomeController@index')->name('home') -> middleware('verifie
 
 Route::get('/', function(){
     return 'home';
-    
+
 });
 
 Route::get('/dashboard',function(){
@@ -96,3 +96,5 @@ Route::get('/dashboard',function(){
 });
 
 Route::get('/redirect/{service}','SocialController@redirect');
+
+Route::get('/callback/{service}','SocialController@callback');
