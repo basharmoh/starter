@@ -13,8 +13,10 @@ return [
     |
     */
 
-    
-    "hello gus"   => ' Hello Gus',
-    "welcom"      => 'WELCOME',
+
+    "hello gus"           => ' Hello Gus',
+    "welcom"              => 'WELCOME',
+    "offer name required" => 'offer name required',
+    "offer name must be unique" => "messages.offer name must be unique",
 
 ];

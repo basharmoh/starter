@@ -13,8 +13,9 @@ return [
     |
     */
 
-    
-    "hello gus"   => 'اهلا سهلا',
-    "welcom"      => 'هلا',
 
+    "hello gus"              => 'اهلا سهلا',
+    "welcom"                 => 'هلا',
+    "offer name required"    => 'اسم العرض مطلوب',
+    "offer name must be unique"  => 'اسم العرض يجب لا يتكرر'
 ];
