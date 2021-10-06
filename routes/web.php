@@ -101,12 +101,36 @@ Route::get('/callback/{service}','SocialController@callback');
 
 Route::get('fillable','CrudController@getOffers');
 
-Route::group(['prefix' => LaravelLocalization::setLocaLe(), 'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']], function () {
+Route::group(['prefix' => LaravelLocalization::setLocaLe(), 'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']], function () {//هذا الكود يستخدم في تحويل اللغات
 
 Route::group(['prefix' => 'offers'],function (){
    // Route::get('store', 'CrudController@store');
 
         Route::get('create', 'CrudController@create');
+
         Route::post('store', 'CrudController@store')-> name('offers.store');
+
+        Route::get('edit/{offer_id}', 'CrudController@editOffer');
+
+        Route::post('update/{offer_id}', 'CrudController@UpdateOffer')->name('offers.update');
+
+        Route::get('delete/{offer_id}', 'CrudController@delete')->name('offers.delete');
+
+        Route::get('all', 'CrudController@getAlloffers');
+
    });
+
+    Route::get('youtube', 'CrudController@getVideo');
+
 });
+
+###################### Begin Ajax routes #####################
+Route::group(['prefix' => 'ajax-offers'], function () {
+    Route::get('create', 'OfferController@create');
+    Route::post('store', 'OfferController@store')->name('ajax.offers.store');
+    Route::get('all', 'OfferController@all')->name('ajax.offers.all');
+    Route::post('delete', 'OfferController@delete')->name('ajax.offers.delete');
+    Route::get('edit/{offer_id}', 'OfferController@edit')->name('ajax.offers.edit');
+    Route::post('update', 'OfferController@Update')->name('ajax.offers.update');
+});
+###################### End Ajax routes #####################
